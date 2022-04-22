@@ -1,6 +1,6 @@
 """
 Halil Ibrahim Mut
-settings for CG matrix operations.
+settings for CG matrix operations
 """
 import pygame
 from math import cos, sin, radians
