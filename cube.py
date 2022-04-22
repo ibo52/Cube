@@ -23,7 +23,7 @@ cube=[-1,1,
 cube=size(cube,40)      #rescaling for bigger cube
 
 cube=translate(cube,150,150)#translate points to center of window
-
+###
 def run():
     global cube
     global clock
