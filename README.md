@@ -1,6 +1,5 @@
 # Cube
 ## Computer Graphics sample animations by using openGL libraries.
-# sample
 Environment: | python3 | Ubuntu 22|
 --- | --- | --- |
 - Updated with object-oriented design and pyOpenGL library implementations. Added more geometric objects, simple gravity etc.
