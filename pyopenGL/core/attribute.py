@@ -54,7 +54,7 @@ class Attribute(object):
         elif self.dataType=="vec4":
             glVertexAttribPointer(variableRef, 4, GL_FLOAT, False, 0, None)
         else:
-            raise Exception("Unknown attribute type" +self.dataType)
+            raise Exception("Unknown attribute type:",self.dataType)
 
         #indicate data should be streamed to variable from buffer
         glEnableVertexAttribArray(variableRef)

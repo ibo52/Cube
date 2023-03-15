@@ -87,7 +87,9 @@ class Test(Base):
         if self.input.isKeyPressed("down"):
             self.translate2.data[1]-=distance
 
-        self.time+=1/self.FPS
+        dt=self.clock.get_fps()
+        dt=dt if dt!=0 else 1
+        self.time+=1/dt
         self.translate1.data[1]=(sin(self.time)+1)/2
 
         self.translate1.uploadData()

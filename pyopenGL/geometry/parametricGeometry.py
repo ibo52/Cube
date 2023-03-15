@@ -22,19 +22,34 @@ class ParametricGeometry(Geometry):
         deltaV=(vEnd-vInit)/vResolution
 
         positions=[]
+        uvs=[]
 
         for uIndex in range(uResolution+1):
             vArray=[]
+            texArray=[]
             for vIndex in range(vResolution+1):
                 u=uInit+uIndex*deltaU
                 v=vInit+vIndex*deltaV
                 vArray.append( S(u,v) )
 
-            positions.append(vArray)
+                u_=uIndex/uResolution
+                v_ = vIndex / vResolution
+                texArray.append([u_,v_])
 
+            positions.append(vArray)
+            uvs.append(texArray)
+
+        """for uIndex in range(uResolution+1):
+            vArray=[]
+            for vIndex in range(vResolution+1):
+                u=uIndex/uResolution
+                v=vIndex/vResolution
+                vArray.append([u,v])
+            uvs.append(vArray)"""
         #store vertex data
         positionData=[]
         colorData=[]
+        uvData=[]
 
         #default vertex colors
         c1,c2,c3=[1,0,0],[0,1,0],[0,0,1]
@@ -57,8 +72,17 @@ class ParametricGeometry(Geometry):
                 else:
                     colorData +=[c1,c2,c3 ,c4,c5,c6]
 
+                #texture data
+                uvA = uvs[xIndex][yIndex]
+                uvB = uvs[xIndex + 1][yIndex]
+                uvC = uvs[xIndex + 1][yIndex + 1]
+                uvD = uvs[xIndex][yIndex + 1]
+
+                uvData=[uvA,uvB,uvC, uvA,uvC,uvD]
+
 
         self.addAttribute("vec3","vertexPosition",positionData)
         self.addAttribute("vec3","vertexColor",colorData)
+        self.addAttribute("vec2","vertexUV",uvData)
         self.countVertices()
 

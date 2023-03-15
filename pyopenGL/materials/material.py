@@ -21,11 +21,11 @@ class Material(object):
     def locateUniforms(self):
         for varName,uniformObj in self.uniforms.items():
             uniformObj.locateVariable(self.programRef, varName)
-
+    def addUniform(self,dataType,variableName,data):
+        self.uniforms[variableName]=Uniform(dataType, data)
     #configure openGL render settings
     def updateRenderSettings(self):
         pass
-
     def setProperties(self,properties={}):
         for name,data in properties.items():
             #update uniforms
@@ -33,6 +33,6 @@ class Material(object):
                 self.uniforms[name].data=data
 
             elif name in self.settings.keys():
-                self.settings[name].data = data
+                self.settings[name] = data
             else:
                 raise Exception("Material has no property:",name)

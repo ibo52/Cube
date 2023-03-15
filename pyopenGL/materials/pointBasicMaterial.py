@@ -1,7 +1,7 @@
-from materials.basicMaterial import basicMaterial
+from materials.basicMaterial import BasicMaterial
 from OpenGL.GL import *
 
-class pointBasicMaterial(basicMaterial):
+class PointBasicMaterial(BasicMaterial):
     def __init__(self,properties={}):
         super().__init__()
 

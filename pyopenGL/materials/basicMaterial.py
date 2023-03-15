@@ -1,7 +1,7 @@
 from materials.material import Material
 from core.uniform import Uniform
 
-class basicMaterial(Material):
+class BasicMaterial(Material):
     def __init__(self):
         vertexShaderCode="""
         uniform mat4 projectionMatrix;

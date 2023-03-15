@@ -22,7 +22,12 @@ class rectangleGeometry(Geometry):
 
         colorData = [C0, C1, C3, C0, C3, C2 ]
 
+        #texture data
+        T0,T1,T2,T3=[0,0],[1,0],[0,1],[1,1]
+        uvData=[T0,T1,T3, T0,T3,T2]
+
         self.addAttribute("vec3","vertexPosition",positionData)
         self.addAttribute("vec3","vertexColor",colorData)
+        self.addAttribute("vec2","vertexUV",uvData)
         self.countVertices()
 

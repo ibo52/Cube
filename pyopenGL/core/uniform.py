@@ -34,5 +34,13 @@ class Uniform(object):
             glUniform4f(self.variableRef, self.data[0], self.data[1], self.data[2], self.data[3])
         elif self.dataType=="mat4":
             glUniformMatrix4fv(self.variableRef, 1, GL_TRUE, self.data)
+        elif self.dataType=="sampler2D":
+            textureObjectRef,textureUnitRef=self.data
+            #activate texture unit
+            glActiveTexture(GL_TEXTURE0+textureUnitRef)
+            #associate texture object with active texture unit
+            glBindTexture(GL_TEXTURE_2D, textureObjectRef)
+            #upload texture unit number to uniform variable in shader
+            glUniform1i(self.variableRef,textureUnitRef)
         else:
             raise Exception("Unknown uniform data type:",self.dataType)

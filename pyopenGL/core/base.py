@@ -55,11 +55,11 @@ class Base(object):
 
             #render
 
+            # constant clock to FPS
+            self.clock.tick()
+
             #display
             pygame.display.flip()
-
-            #constant clock to FPS
-            self.clock.tick(self.FPS)
 
         #exit
         pygame.quit()

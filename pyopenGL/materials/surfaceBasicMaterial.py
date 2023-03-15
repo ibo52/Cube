@@ -1,7 +1,7 @@
-from materials.basicMaterial import basicMaterial
+from materials.basicMaterial import BasicMaterial
 from OpenGL.GL import *
 
-class SurfaceBasicMaterial(basicMaterial):
+class SurfaceBasicMaterial(BasicMaterial):
     def __init__(self,properties={}):
         super().__init__()
 

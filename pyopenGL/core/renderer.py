@@ -6,6 +6,9 @@ class Renderer(object):
         glEnable(GL_DEPTH_TEST)
         glClearColor(clearColor[0],clearColor[1],clearColor[2], 1.0)
 
+        #support transparent textures
+        glEnable(GL_BLEND)
+        glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA)
     def render(self, scene, camera):
         #clear buffers
         glClear(GL_COLOR_BUFFER_BIT| GL_DEPTH_BUFFER_BIT)
