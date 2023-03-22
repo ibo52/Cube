@@ -6,9 +6,16 @@ Environment: | python3 | Ubuntu 22|
 - Install required libraries: __`pip install pyopengl pygame numpy`__
 - User can move camera by using __w,a,s,d__ keys and __mouse__ to interact with screen.
 
-New preview images
-![sample program output1](new_sample1.png)
-![sample program output1](new_sample2.png)
+## Sample images
+1. (Old) preview of projection 3D to 2D
+  - ![sample program output](https://github.com/ibo52/Cube/blob/master/sample%20images/sample_output.gif)
 
-Old preview
-![sample program output](sample_output.gif)
+2. (New) preview images of geometric shapes
+  - ![sample program output1](https://github.com/ibo52/Cube/blob/master/sample%20images/new_sample1.png)
+  - ![sample program output1](https://github.com/ibo52/Cube/blob/master/sample%20images/new_sample2.png)
+
+3. minecraft replica-chunk map test
+  - ![sample program output](https://github.com/ibo52/Cube/blob/master/sample%20images/test06-simple-map.png)
+
+4. minecraft replica-chunk map test with skybox
+  - ![sample program output](https://github.com/ibo52/Cube/blob/master/sample%20images/test07-skybox.png)
